@@ -15,4 +15,8 @@
     <ProjectReference Include="..\..\Infrastructure\ETrade.Persistance\ETrade.Persistance.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 </Project>
