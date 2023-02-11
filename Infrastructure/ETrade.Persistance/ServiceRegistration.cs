@@ -1,6 +1,4 @@
-﻿using ETrade.Application.Abstractions;
-using ETrade.Persistance.Concretes;
-using ETrade.Persistance.Contexts;
+﻿using ETrade.Persistance.Contexts;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -15,7 +13,8 @@ namespace ETrade.Persistance
     {
         public static void AddPersistanceServices(this IServiceCollection services)
         {
-            services.AddDbContext<ETradeContext>(options => options.UseNpgsql("User ID=postgres;Password=123456;Host=localhost;Port=5432;Database=ETradeDb;"));
+            services.AddDbContext<ETradeContext>(
+                options => options.UseNpgsql(Configuration.ConnectionString));
         }
     }
 }
